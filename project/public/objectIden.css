@@ -1,106 +1,104 @@
 body {
-    font-family: Arial, sans-serif;
-    background: burlywood;
-    margin: 0;
-    padding: 0;
-  }
-  .viewport {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  .container {
-    background-color: #ffffff2b;
-    padding: 70px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  h1 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  .scroll-view {
-    max-height: 500px;
-    overflow-y: auto;
-  }
-  .question {
-    margin-bottom: 20px;
-  }
-  .question img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-  }
-  .answer {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    box-sizing: border-box;
-    border-radius: 5px;
-    transition: border-color 0.3s ease; 
-  }
-  .correct {
-    border-color: green;
-  }
-  .wrong {
-    border-color: red;
-  }
+  font-family: Arial, sans-serif;
+  background: burlywood;
+  margin: 0;
+  padding: 0;
+}
+.viewport {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+.container {
+  background-color: #ffffff2b;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-  
-  .submit_btn {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-top: 20px;
-    background-color: #01605A;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+.question {
+  margin-bottom: 20px;
+}
+.question img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.answer {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  transition: border-color 0.3s ease; 
+}
+.correct {
+  border-color: green;
+}
+.wrong {
+  border-color: red;
+}
 
-  button:hover {
-    background-color: #0056b3;
-  }
-  #result {
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  .image-button {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-  }
-  
-  .image-button img {
-    width: 30px; 
-    height: auto; 
-  }
 
-  .image-container {
-    padding: 90px;
-    display: inline-block;
-    margin-bottom: 10px;
-    text-align: center;
-    background-color: #FF862D;
-    border-radius: 10px;
-  }
+.submit_btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #01605A;
+  color: #fff;
+  border: none;
+  border-radius: 5px; 
+  cursor: pointer;
+}
 
-  .image-container {
-    width: 450px; 
-    height: 500px; 
-  }
+button:hover {
+  background-color: #124415;
+}
+#result {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.image-button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.image-button img {
+  width: 30px; 
+  height: auto; 
+}
+
+.image-container {
+  padding: 50px;
+  display: inline-block;
+  margin-bottom: 10px;
+  text-align: center;
+  background-color: #FF862D;
+  border-radius: 10px;
+}
+
+.image-container {
+  width: 350px; 
+  height: 400px; 
+}
+
+.image-container {
+  display: block;
+  margin-top: 5px;
+  font-style: oblique;
   
-  .image-container {
-    display: block;
-    margin-top: 5px;
-    font-style: oblique;
-    
-  }
+}
