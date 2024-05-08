@@ -53,6 +53,7 @@ function validateAnswer() {
 function askNameAndAge(score) {
     var name = prompt("Please enter your name:");
     var age = prompt("Please enter your age:");
+    var game = "Word Scramble";
 
     fetch('/save_word_user_info', {
         method: 'POST',
@@ -60,7 +61,7 @@ function askNameAndAge(score) {
             'Content-Type': 'application/json',
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
         },
-        body: JSON.stringify({ name: name, age: age, score: score })
+        body: JSON.stringify({ name: name, age: age, score: score, game: game })
     })
     .then(response => response.json())
     .then(data => {

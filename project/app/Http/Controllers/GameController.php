@@ -53,11 +53,13 @@ class GameController extends Controller
         $name = $request->input('name');
         $age = $request->input('age');
         $score = $request->input('score');
+        $game = $request->input('game');
 
         $userRecord = new UserRecord();
         $userRecord->name = $name;
         $userRecord->age = $age;
         $userRecord->score = $score;
+        $userRecord->game = $game;
         $userRecord->save();
 
         return response()->json(['message' => 'User record saved successfully']);
@@ -68,11 +70,13 @@ class GameController extends Controller
         $name = $request->input('name');
         $age = $request->input('age');
         $score = $request->input('score');
+        $game = $request->input('game');
 
         $userRecord = new UserRecord();
         $userRecord->name = $name;
         $userRecord->age = $age;
         $userRecord->score = $score;
+        $userRecord->game = $game;
         $userRecord->save();
 
         return response()->json(['name' => $name, 'age' => $age]);
@@ -104,11 +108,13 @@ class GameController extends Controller
         $name = $request->input('name');
         $age = $request->input('age');
         $score = $request->input('score');
+        $game = $request->input('game');
     
         $userRecord = new UserRecord();
         $userRecord->name = $name;
         $userRecord->age = $age;
         $userRecord->score = $score;
+        $userRecord->game = $game;
         $userRecord->save();
     
         return response()->json(['name' => $name, 'age' => $age]);

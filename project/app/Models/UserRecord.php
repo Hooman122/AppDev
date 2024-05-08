@@ -10,5 +10,5 @@ class UserRecord extends Model
     use HasFactory;
     protected $table = 'user_records';
 
-    protected $fillable = ['name', 'age', 'score'];
+    protected $fillable = ['name', 'age', 'score', 'game'];
 }
