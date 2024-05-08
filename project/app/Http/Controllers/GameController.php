@@ -22,6 +22,11 @@ class GameController extends Controller
         return view('object_game');
     }
 
+    public function wordScramble()
+    {
+        return view('word_scramble');
+    }
+
     public function validateAnswer(Request $request)
     {
         $userAnswers = $request->input('answers');
@@ -70,6 +75,42 @@ class GameController extends Controller
         $userRecord->score = $score;
         $userRecord->save();
 
+        return response()->json(['name' => $name, 'age' => $age]);
+    }
+
+    public function validateWordAnswer(Request $request)
+    {
+        $userAnswers = $request->input('answers');
+        $correctAnswers = ["word", "color", "bed", "chair", "table" /* Add more correct answers here */];
+        $correctCount = 0;
+        $results = [];
+
+        foreach ($userAnswers as $index => $answer) {
+            if ($answer === $correctAnswers[$index]) {
+                $correctCount++;
+                $results[] = "Question " . ($index + 1) . ": Correct! Well done!";
+            } else {
+                $results[] = "Question " . ($index + 1) . ": Sorry, that's incorrect. Please try again.";
+            }
+        }
+
+        $score = ($correctCount / count($correctAnswers)) * 100;
+
+        return response()->json(['results' => $results, 'score' => number_format($score, 2)]);
+    }
+
+    public function saveWordUserInfo(Request $request)
+    {
+        $name = $request->input('name');
+        $age = $request->input('age');
+        $score = $request->input('score');
+    
+        $userRecord = new UserRecord();
+        $userRecord->name = $name;
+        $userRecord->age = $age;
+        $userRecord->score = $score;
+        $userRecord->save();
+    
         return response()->json(['name' => $name, 'age' => $age]);
     }
 

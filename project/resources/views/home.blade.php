@@ -30,6 +30,12 @@
           <span>Math Quiz</span>
         </a>
       </div>
+      <div class="game-box">
+              <a href="{{ route('word_scramble') }}" class="image-button">
+                <img src="images\word scramble.png">
+                <span>Word Scramble</span>
+             </a>
+      </div>
     </div>
   </div>
 </body>
