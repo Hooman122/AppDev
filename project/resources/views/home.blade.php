@@ -10,10 +10,13 @@
 <nav class="navbar">
     <ul>
       <li><img src="images\learn&play icons.png" alt="Logo" class="logo"></li>
-      <li><a href="#">Contact</a></li>
-     
+      <li><a href="{{ route('home') }}">Home</a></li>
+      <li class="nav-item">
+          <a href="{{ route('user-records') }}">Records</a>
+      </li>
     </ul>
-  </nav>
+</nav>
+
   <div class="container">
     <h1>Welcome to Fun Games!</h1>
     <p>Please select a game:</p>
@@ -32,7 +35,7 @@
       </div>
       <div class="game-box">
               <a href="{{ route('word_scramble') }}" class="image-button">
-                <img src="images\word scramble.png">
+                <img src="images\word_scramble.png">
                 <span>Word Scramble</span>
              </a>
       </div>
