@@ -17,20 +17,25 @@ body {
 
 .container {
     background-color: #ffffff2b;
-    padding: 70px;
+    padding: 50px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
 }
 
 h1 {
+    font-size: 20px;
     text-align: center;
-    margin-bottom: 20px;
+    padding-bottom: 50px;
 }
 
-.scroll-view {
-    max-height: 500px;
-    overflow-y: auto;
+span {
+    font-size: large;
+    font-style:italic;
+    font-weight: bolder;
+    color: #971de8;
 }
+
 
 .question {
     margin-bottom: 20px;
@@ -52,29 +57,27 @@ h1 {
     transition: border-color 0.3s ease; 
 }
 
-.correct {
-    border-color: green;
-}
-
-.wrong {
-    border-color: red;
-}
 
 #result {
     margin-top: 20px;
     text-align: center;
+    font-weight: bold;
 }
 
 .image-button {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 5px;
+    left: 5px;
     background: none;
     border: none;
     padding: 0;
     cursor: pointer;
 }
 
+.image-button:hover {
+    background-color: red;
+  }
+  
 .image-button img {
     width: 30px; 
     height: auto; 
@@ -108,5 +111,30 @@ h1 {
 }
 
 .submit_btn:hover {
-    background-color: #0056b3;
+    background-color: #0e4219;
 }   
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 9999;
+  }
+  
+  .popup-content {
+    color: white;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }

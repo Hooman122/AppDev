@@ -85,23 +85,28 @@ class GameController extends Controller
     public function validateWordAnswer(Request $request)
     {
         $userAnswers = $request->input('answers');
-        $correctAnswers = ["word", "color", "bed", "chair", "table" /* Add more correct answers here */];
+        $correctAnswers = ["door", "color", "bed", "chair", "table" /* Add more correct answers here */];
         $correctCount = 0;
         $results = [];
-
-        foreach ($userAnswers as $index => $answer) {
-            if ($answer === $correctAnswers[$index]) {
+    
+        foreach ($userAnswers as $userAnswer) {
+            // Normalize user answer to lowercase for comparison
+            $normalizedUserAnswer = strtolower(trim($userAnswer));
+            
+            // Check if the normalized user answer is in the array of correct answers
+            if (in_array($normalizedUserAnswer, $correctAnswers)) {
                 $correctCount++;
-                $results[] = "Question " . ($index + 1) . ": Correct! Well done!";
+                $results[] = "Correct";
             } else {
-                $results[] = "Question " . ($index + 1) . ": Sorry, that's incorrect. Please try again.";
+                $results[] = "Incorrect";
             }
         }
-
+    
         $score = ($correctCount / count($correctAnswers)) * 100;
-
+    
         return response()->json(['results' => $results, 'score' => number_format($score, 2)]);
     }
+    
 
     public function saveWordUserInfo(Request $request)
     {
@@ -117,9 +122,6 @@ class GameController extends Controller
         $userRecord->game = $game;
         $userRecord->save();
     
-        return response()->json(['name' => $name, 'age' => $age]);
+        return response()->json(['name' => $name, 'age' => $age, 'score' => $score]);
     }
-
 }
-
-  

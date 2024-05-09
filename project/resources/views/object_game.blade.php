@@ -14,41 +14,51 @@
     <div class="container">
       <h1>Object Identification Game</h1>
       <form id="game" class="scroll-view">
-        <div class="questions-container">
-          <div class="image-container">
-            <div class="question" id="question1">
+      <div class="questions-container">
+          <div class="image-container" id="image-container1">
+            <div class="question">
               <img src="{{ asset('images/elephant.png') }}" alt="elephant">
               <input type="text" name="answers[]" class="answer" placeholder="Enter your answer">
+              <div class="result"></div> <!-- Result container -->
             </div>
           </div>
-          <div class="image-container">
-            <div class="question" id="question2">
+          </div>
+          <div class="questions-container">
+          <div class="image-container" id="image-container1">
+            <div class="question">
               <img src="{{ asset('images/fruits.png') }}" alt="fruits">
               <input type="text" name="answers[]" class="answer" placeholder="Enter your answer">
+              <div class="result"></div> <!-- Result container -->
             </div>
           </div>
-          <div class="image-container">
-            <div class="question" id="question3">
+          </div>
+          <div class="questions-container">
+          <div class="image-container" id="image-container1">
+            <div class="question">
               <img src="{{ asset('images/car.png') }}" alt="car">
               <input type="text" name="answers[]" class="answer" placeholder="Enter your answer">
+              <div class="result"></div> 
             </div>
           </div>
-          <div class="image-container">
-            <div class="question" id="question4">
+          <div class="questions-container">
+          <div class="image-container" id="image-container1">
+            <div class="question">
               <img src="{{ asset('images/shoes.png') }}" alt="shoes">
               <input type="text" name="answers[]" class="answer" placeholder="Enter your answer">
+              <div class="result"></div> 
             </div>
           </div>
-          <div class="image-container">
-            <div class="question" id="question5">
+          <div class="questions-container">
+          <div class="image-container" id="image-container1">
+            <div class="question">
               <img src="{{ asset('images/ball.png') }}" alt="ball">
               <input type="text" name="answers[]" class="answer" placeholder="Enter your answer">
+              <div class="result"></div> 
             </div>
           </div>
-        </div>
         <button type="button" class="submit_btn" onclick="validateAnswer()">Submit</button>
       </form>
-      <div id="result"></div>
+    
     </div>
   </div>
   <!-- JavaScript Code -->

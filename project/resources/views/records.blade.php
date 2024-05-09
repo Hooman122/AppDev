@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Records</title>
     <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('styles.css') }}">
     
 </head>
 <body>
@@ -14,14 +14,14 @@
       <li><img src="images\learn&play icons.png" alt="Logo" class="logo"></li>
       <li><a href="{{ route('home') }}">Home</a></li>
       <li class="nav-item">
-          <a href="{{ route('user-records') }}">Records</a>
+          <a href="{{ route('user-records') }}">Records</a> 
       </li>
     </ul>
 </nav>
-    <div class="container">
-        <h1>User Records</h1>
+    <div class="t-container">
+        <h1>Player Records</h1>
 
-        <table class="table">
+        <table class="custom-table">
             <thead class="thead-dark">
                 <tr>
                     <th scope="col">#</th>
@@ -47,7 +47,6 @@
         </table>
     </div>
 
-    <!-- Bootstrap JS (optional) -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   
 </body>
 </html>

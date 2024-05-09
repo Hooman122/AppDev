@@ -69,12 +69,16 @@ button:hover {
 
 .image-button {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 5px;
+  left: 5px;
   background: none;
   border: none;
   padding: 0;
   cursor: pointer;
+}
+
+.image-button:hover {
+  background-color: red;
 }
 
 .image-button img {

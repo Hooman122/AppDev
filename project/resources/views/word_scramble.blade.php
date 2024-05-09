@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="{{ asset('word_scramble.css') }}">
   <!-- CSRF Token Meta Tag -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
+
   <!-- Pass route URL to JavaScript -->
 </head>
 <body>
@@ -14,44 +15,14 @@
   <div class="viewport">
     <div class="container">
       <h1>Word Scramble Game</h1>
-      <form id="game" class="scroll-view">
-        <div class="questions-container">
-          <div class="question" id="question1">
-            <span>Scrambled Word: </span>
-            <span id="scrambledWord">dorw</span>
-            <input type="text" name="answers[]" class="answer" placeholder="Enter your answer">
-          </div>
-          <div class="questions-container">
-          <div class="question" id="question2">
-            <span>Scrambled Word: </span>
-            <span id="scrambledWord">locor</span>
-            <input type="text" name="answers[]" class="answer" placeholder="Enter your answer">
-          </div>
-          <div class="questions-container">
-          <div class="question" id="question3">
-            <span>Scrambled Word: </span>
-            <span id="scrambledWord">deb</span>
-            <input type="text" name="answers[]" class="answer" placeholder="Enter your answer">
-          </div>
-          <div class="questions-container">
-          <div class="question" id="question4">
-            <span>Scrambled Word: </span>
-            <span id="scrambledWord">airch</span>
-            <input type="text" name="answers[]" class="answer" placeholder="Enter your answer">
-          </div>
-          <div class="questions-container">
-          <div class="question" id="question5">
-            <span>Scrambled Word: </span>
-            <span id="scrambledWord">ebatl</span>
-            <input type="text" name="answers[]" class="answer" placeholder="Enter your answer">
-          </div>
-          <!-- Add more questions here -->
+        <div id="questions-container" class="questions-container">
+          <!-- Questions will be dynamically added here -->
         </div>
-        <button type="button" class="submit_btn" onclick="validateAnswer()">Submit</button>
-      </form>
-      <div id="result"></div>
+        <button type="button" id="submit_btn" class="submit_btn" onclick="validateAnswer()">Submit</button>
+        <div id="result"></div>
     </div>
   </div>
+
   <!-- JavaScript Code -->
   <script src="{{ asset('js/word_scramble.js') }}"></script>
 </body>

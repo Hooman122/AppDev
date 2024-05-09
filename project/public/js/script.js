@@ -32,10 +32,10 @@ function validateAnswer() {
     })
     .then(response => response.json())
     .then(data => {
-        var resultDiv = document.getElementById('result');
-        resultDiv.innerHTML = '';
         data.results.forEach(function(result, index) {
             var answerInput = questions[index].querySelector('.answer');
+            var resultContainer = questions[index].querySelector('.result'); 
+            resultContainer.innerHTML = "<p>" + result + "</p>"; 
             if (result === "Correct") {
                 answerInput.classList.remove('wrong');
                 answerInput.classList.add('correct');
@@ -43,13 +43,13 @@ function validateAnswer() {
                 answerInput.classList.remove('correct');
                 answerInput.classList.add('wrong');
             }
-            resultDiv.innerHTML += "<p>" + result + "</p>";
         });
         alert("Your score: " + data.score + "%");
         askNameAndAge(data.score);
     })
     .catch(error => console.error('Error:', error));
 }
+
 function askNameAndAge(score) {
     var name = prompt("Please enter your name:");
     var age = prompt("Please enter your age:");
@@ -65,12 +65,10 @@ function askNameAndAge(score) {
     })
     .then(response => response.json())
     .then(data => {
-        alert("Hello, " + data.name + "! You are " + data.age + " years old. Your score has been saved.");
+        alert("Hello, " + data.name + "! Your score has been saved.");
     })
     .catch(error => console.error('Error:', error));
 }
-
-// Inside math.js and script.js
 
 function goBack() {
     if (confirm("Do you want to exit the game?")) {
