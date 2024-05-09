@@ -6,6 +6,21 @@
     <title>User Records</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('styles.css') }}">
+    <style>
+    .custom-btn {
+        background-color: #dc3545; /* Red color */
+        color: #fff; /* White text color */
+        border: none; /* Remove button border */
+        padding: 0.375rem 0.75rem; /* Adjust padding as needed */
+        font-size: 1rem; /* Adjust font size as needed */
+        border-radius: 0.25rem; /* Add border-radius for rounded corners */
+        cursor: pointer; /* Add cursor pointer on hover */
+    }
+
+    .custom-btn:hover {
+        background-color: #c82333; /* Darker red color on hover */
+    }
+    </style>
     
 </head>
 <body>
@@ -30,8 +45,7 @@
                 <th scope="col">Score</th>
                 <th scope="col">Game</th>
                 <th scope="col">Created At</th>
-                <th scope="col">Actions</th> <!-- Add a new column for actions -->
-            </tr>
+                <th scope="col">Actions</th> 
         </thead>
         <tbody>
             @foreach ($userRecords as $userRecord)
@@ -47,7 +61,7 @@
                     <form action="{{ route('delete-user-record', ['id' => $userRecord->id]) }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <button type="submit" class="custom-btn">Delete</button>
                     </form>
                 </td>
             </tr>
