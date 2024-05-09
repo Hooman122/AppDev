@@ -16,6 +16,7 @@ Route::post('/validate_word_answer', [GameController::class, 'validateWordAnswer
 
 
 Route::get('/user-records', [UserRecordController::class, 'showUserRecords'])->name('user-records');
+Route::delete('/user-records/{id}', [UserRecordController::class, 'deleteUserRecord'])->name('delete-user-record');
 
 
 
